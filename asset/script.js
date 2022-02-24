@@ -9,24 +9,41 @@
         })
         
     }
-
+    document.addEventListener("keypress",(e)=>{
+        setDisplay(e.key)
+    })
     function setDisplay(data){
+        const clear = ()=>{
+            display = []
+            document.getElementsByClassName("data")[0].innerHTML = ""
+            document.getElementsByClassName("result")[0].innerHTML = ""
+        }
+        const setResult = ()=>{
+            document.getElementsByClassName("data")[0].innerHTML = display.join("")
+            document.getElementsByClassName("result")[0].innerHTML = eval(display.join(""))
+        }
         switch (data) {
             case "C":
-                display = []
-                document.getElementsByClassName("data")[0].innerHTML = ""
-                document.getElementsByClassName("result")[0].innerHTML = ""
+                clear()
                 break;
             case "&lt;=":
                 display.pop()
                 break;
             case "=":
-                document.getElementsByClassName("data")[0].innerHTML = display.join("")
-                document.getElementsByClassName("result")[0].innerHTML = eval(display.join(""))
-                console.log("=")
+                setResult()
+                break; 
+            case "Enter":
+                setResult()
                 break;     
             default:
-                display.push(data)
+                if(!/[A-z]/.test(data)){
+                    if (document.getElementsByClassName("data")[0].innerHTML=="") {
+                        display.push(data)
+                    } else {
+                        clear()
+                        display.push(data)
+                    }
+                }
                 break;
         }
         

@@ -13,7 +13,7 @@ body {
   border-radius: 25px;
   padding: 10px;
   height: fit-content;
-  max-width: 250px;
+  width: 250px;
 }
 .header {
   width: 100%;
@@ -69,4 +69,29 @@ body {
 
 .text-h1 {
   color: aliceblue;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+  }
+  .button {
+    justify-content: space-between;
+  }
+  .button > div {
+    width: 80px;
+    height: 50px;
+    font-size: 25px;
+  }
+  .input {
+    font-size: 50px;
+  }
 }
