@@ -9,7 +9,7 @@
         })
         
     }
-    document.addEventListener("keypress",(e)=>{
+    document.addEventListener("keydown",(e)=>{
         setDisplay(e.key)
     })
     function setDisplay(data){
@@ -25,6 +25,9 @@
         switch (data) {
             case "C":
                 clear()
+                break;
+            case "Backspace":
+                display.pop()
                 break;
             case "&lt;=":
                 display.pop()
