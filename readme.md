@@ -1,3 +1,6 @@
 #Calculator
 calculator using simple html,css,js
-<img src="./asset/img/main.png" />
+
+<a href="http://calculator.tojonir.com">visit</a>
+
+<img src="./asset/img/calculator.png" />
